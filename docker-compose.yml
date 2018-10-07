@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web-server:
+    container_name: web-server
+    image: nginx:alpine
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+  php-runner:
+    container_name: php-runner
+    build: .
+    volumes:
+      - ./src:/var/www
