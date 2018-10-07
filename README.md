@@ -1,4 +1,4 @@
-# PHP + NGNIX Docker Setup
+# PHP + NGINX Docker Setup
 
 ## Getting Started
 To get started, just:
