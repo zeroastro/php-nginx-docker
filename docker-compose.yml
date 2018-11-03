@@ -12,5 +12,19 @@ services:
   php-runner:
     container_name: php-runner
     build: .
+    environment:
+      DOCKER_ENVIRONMENT: 'True'
+      USERS_HOST: db_zeroastro
+      USERS_USERNAME: zeroastro
+      USERS_PORT: 3306
+      USERS_PASSWORD: zeroastro
+    links:
+      - db_zeroastro
     volumes:
       - ./src:/var/www
+  db_zeroastro:
+    image: mysql/mysql-server:5.6
+    environment:
+      MYSQL_USER: zeroastro
+      MYSQL_PASSWORD: zeroastro
+      MYSQL_DATABASE: zeroastro
