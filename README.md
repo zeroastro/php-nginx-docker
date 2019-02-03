@@ -19,9 +19,5 @@ The Makefile provides few convenient and useful commands:
 - `make shell` : Run an interactive shell with the php container
 
 ## Customization
-
-### NGINX
-NGINX web-server can be customized via `build/Dockerfile-nginx` and `build/nginx/site.conf`
-
-### PHP-FPM
-The php runner PHP-FPM can be customized via `build/Dockerfile-php`
+- NGINX web-server can be customized in `build/nginx`
+- The php runner PHP-FPM can be customized in `build/php-fpm`

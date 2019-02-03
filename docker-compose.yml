@@ -4,8 +4,7 @@ services:
   web-server:
     container_name: web-server
     build:
-      context: build
-      dockerfile: Dockerfile-nginx
+      context: build/nginx
     ports:
       - "8000:80"
     volumes:
@@ -14,7 +13,6 @@ services:
   php-runner:
     container_name: php-runner
     build:
-      context: build
-      dockerfile: Dockerfile-php
+      context: build/php-fpm
     volumes:
       - ./src:/var/www
