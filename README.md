@@ -1,4 +1,8 @@
-# PHP + NGINX Docker Setup
+# PHP + NGINX Local Docker Setup
+
+## Versions:
+- NGINX ^1
+- PHP ^7.2
 
 ## Getting Started
 To get started, just:
@@ -15,4 +19,9 @@ The Makefile provides few convenient and useful commands:
 - `make shell` : Run an interactive shell with the php container
 
 ## Customization
-You can customize the nginx web-server configuration via the `site.conf` file and the php container via the `Dockerfile`.
+
+### NGINX
+NGINX web-server can be customized via `build/Dockerfile-nginx` and `build/nginx/site.conf`
+
+### PHP-FPM
+The php runner PHP-FPM can be customized via `build/Dockerfile-php`
