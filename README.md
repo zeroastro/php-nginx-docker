@@ -15,6 +15,8 @@ The Makefile provides few convenient and useful commands:
 - `make rebuild` : Rebuild the containers
 - `make run` : Run the containers in background
 - `make stop` : Stop the execution of the containers
+- `make down` : Down all the containers
+- `make logs` : Listen logs on all the containers
 - `make status` : Show the status of the containers
 - `make shell` : Run an interactive shell with the php container
 

@@ -11,6 +11,14 @@ run:
 stop:
 	@docker-compose stop
 
+.PHONY: down
+down:
+	@docker-compose down
+
+.PHONY: logs
+logs:
+	@docker-compose logs
+
 .PHONY: status
 status:
 	@docker-compose ps
