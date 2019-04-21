@@ -1,11 +1,8 @@
-FROM php:7.2-fpm
+FROM php:7.3-fpm-alpine3.9
 
-RUN apt-get update && \
-    apt-get install -y ca-certificates apt-transport-https wget curl unzip && \
-    apt-get clean && \
-    apt-get autoclean && \
-    docker-php-ext-install pdo_mysql mysqli && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk update && \
+    apk add --no-cache ca-certificates curl unzip bash && \
+    docker-php-ext-install pdo_mysql mysqli
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
