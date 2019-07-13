@@ -1,10 +1,16 @@
 .PHONY: rebuild
-rebuild:
-	@docker-compose down --remove-orphans
+rebuild: down build
+
+.PHONY: build
+build:
 	@docker-compose build
 
 .PHONY: run
 run:
+	@docker-compose up
+
+.PHONY: run-d
+run-d:
 	@docker-compose up -d
 
 .PHONY: stop
@@ -13,7 +19,7 @@ stop:
 
 .PHONY: down
 down:
-	@docker-compose down
+	@docker-compose down --remove-orphans
 
 .PHONY: logs
 logs:
