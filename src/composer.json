@@ -1,0 +1,6 @@
+{
+    "name": "zeroastro/php-nginx-docker",
+    "description": "NGINX + PHP-FPM Bootstrap docker setup",
+    "license": "MIT",
+    "homepage": "https://github.com/zeroastro/php-nginx-docker",
+}

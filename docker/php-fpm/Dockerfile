@@ -9,8 +9,12 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer
 
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
+COPY ./scripts /scripts
+
 WORKDIR /var/www
 
 EXPOSE 9000
 
-CMD ["php-fpm"]
+CMD ["/scripts/run-app.sh"]

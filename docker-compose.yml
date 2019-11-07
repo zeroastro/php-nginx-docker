@@ -18,3 +18,5 @@ services:
       context: docker/php-fpm
     volumes:
       - ./src:/var/www
+    env_file:
+      .env

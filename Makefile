@@ -1,5 +1,5 @@
 .PHONY: rebuild
-rebuild: down build
+rebuild: clean build
 
 .PHONY: build
 build:
@@ -17,9 +17,9 @@ run-d:
 stop:
 	@docker-compose stop
 
-.PHONY: down
+.PHONY: clean
 down:
-	@docker-compose down --remove-orphans
+	@docker-compose down --remove-orphans --volumes
 
 .PHONY: logs
 logs:
@@ -31,4 +31,4 @@ status:
 
 .PHONY: shell
 shell:
-	@docker exec -it php-runner /bin/bash
+	@docker-compose exec php-runner /bin/bash
