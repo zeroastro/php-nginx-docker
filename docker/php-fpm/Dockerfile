@@ -11,10 +11,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-COPY ./scripts /scripts
+COPY ./usr/ /usr/
 
 WORKDIR /var/www
 
 EXPOSE 9000
 
-CMD ["/scripts/run-app.sh"]
+CMD ["/usr/bin/run-app.sh"]
