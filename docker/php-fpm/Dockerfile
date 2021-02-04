@@ -11,7 +11,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-COPY ./usr/ /usr/
+COPY docker/php-fpm/usr/ /usr/
+COPY src/ /var/www/
 
 WORKDIR /var/www
 

@@ -4,19 +4,13 @@ services:
   web-server:
     container_name: web-server
     build:
-      context: docker/nginx
-    ports:
-      - "8000:80"
-    volumes:
-      - ./src:/var/www
+      context: .
+      dockerfile: docker/nginx/Dockerfile
     depends_on:
       - php-runner
 
   php-runner:
     container_name: php-runner
     build:
-      context: docker/php-fpm
-    volumes:
-      - ./src:/var/www
-    env_file:
-      .env
+      context: .
+      dockerfile: docker/php-fpm/Dockerfile

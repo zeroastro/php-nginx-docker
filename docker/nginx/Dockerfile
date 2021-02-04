@@ -1,6 +1,7 @@
 FROM nginx:1.19
 
-COPY ./etc/ /etc/
+COPY docker/nginx/etc/ /etc/
+COPY docker/nginx/var/ /var/
 
 EXPOSE 80 443
 
