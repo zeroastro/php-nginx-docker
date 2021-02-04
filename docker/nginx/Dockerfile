@@ -1,4 +1,4 @@
-FROM nginx:1-alpine
+FROM nginx:1.19
 
 COPY ./etc/ /etc/
 

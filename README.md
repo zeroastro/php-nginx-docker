@@ -1,8 +1,8 @@
 # PHP + NGINX Bootstrap Docker Setup
 
 ## Versions:
-- Webserver NGinx ^1 (Alpine)
-- PHP ^7.3 (Alpine)
+- Webserver nginx 1.19
+- PHP ^8.0 (Buster)
 
 ## Getting Started
 - Checkout the repository

@@ -1,7 +1,7 @@
-FROM php:7.3-fpm-alpine3.9
+FROM php:8.0-fpm-buster
 
-RUN apk update && \
-    apk add --no-cache ca-certificates curl unzip bash && \
+RUN apt-get update && \
+    apt-get install -y curl unzip bash && \
     docker-php-ext-install pdo_mysql mysqli
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
